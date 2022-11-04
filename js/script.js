@@ -7,6 +7,14 @@ simons.innerHTML = numeri()
 
 setTimeout(() => simons.style.display = 'none', 5 * 1000)
 
+setTimeout(question, 6 * 1000)
+
+function question() {
+    for (let i = 0; i < 5; i++) {
+        parseInt(prompt('te li ricordi?'))
+    }
+}
+
 function numeri() {
     for (let i = 0; i < 5; i++) {
     simonNumber = randomNumb(1, 100) 
