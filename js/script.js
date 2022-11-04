@@ -3,9 +3,12 @@
 // Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
 const simonNumbers = []
 let simons = document.getElementById('simon-numbers')
+simons.innerHTML = numeri()
 
+setTimeout(() => simons.style.display = 'none', 5 * 1000)
 
-for (let i = 0; i < 5; i++) {
+function numeri() {
+    for (let i = 0; i < 5; i++) {
     simonNumber = randomNumb(1, 100) 
     if (simonNumbers.includes(simonNumber)){
         i++
@@ -13,10 +16,8 @@ for (let i = 0; i < 5; i++) {
         simonNumbers.push(simonNumber)
     }
 }
-
-
-
-
+return simonNumbers
+}
 
 function randomNumb(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
